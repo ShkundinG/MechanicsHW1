@@ -21,6 +21,8 @@ AHW2GuardCharacter::AHW2GuardCharacter()
 
     UCharacterMovementComponent* Movement = GetCharacterMovement();
     Movement->bOrientRotationToMovement = true;
+    // ABP_Unarmed checks movement input acceleration before leaving idle.
+    Movement->GetNavMovementProperties()->bUseAccelerationForPaths = true;
     Movement->RotationRate = FRotator(0.0f, 520.0f, 0.0f);
     Movement->MaxWalkSpeed = PatrolSpeed;
 
